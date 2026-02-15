@@ -1,0 +1,66 @@
+.app-header {
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 10;
+  position: relative;
+}
+
+.brand {
+  cursor: pointer;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  transform: skewX(-5deg);
+  user-select: none;
+}
+
+.logo-text {
+  color: white;
+}
+
+.logo-dot {
+  color: var(--color-accent);
+}
+
+.header-icons {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.header-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: var(--border-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+  color: var(--color-text-white);
+}
+
+.header-icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header-icon-btn:active {
+  transform: scale(0.95);
+}

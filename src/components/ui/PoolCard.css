@@ -1,0 +1,54 @@
+.pool-card {
+  min-width: 140px;
+  height: 180px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: var(--radius-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--spacing-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.pool-card:hover {
+  transform: translateY(-4px);
+}
+
+.pool-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.pool-card:hover .pool-bg {
+  filter: grayscale(0%);
+  opacity: 0.8;
+}
+
+.pool-info {
+  position: relative;
+  z-index: 2;
+}
+
+.pool-participants {
+  font-size: 10px;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  margin-bottom: 2px;
+}
+
+.pool-title {
+  font-size: 18px;
+  line-height: 1.1;
+}

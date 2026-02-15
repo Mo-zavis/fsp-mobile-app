@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@400;500;700;800&display=swap');
+
+:root {
+  /* Colors - EVOLVED THEME */
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface-glass: rgba(30, 30, 30, 0.6);
+  --color-accent: #0EA5E9;       /* Electric cyan-blue - PRIMARY ACCENT (evolved from yellow) */
+  --color-red: #EE3524;          /* Secondary accent */
+  --color-text-white: #FFFFFF;
+  --color-text-gray: #A0A0A0;
+
+  /* Typography */
+  --font-heading: 'Chakra Petch', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* Effects */
+  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
+  --shadow-glow-strong: 0 0 30px rgba(14, 165, 233, 0.5);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+  --border-accent: 1px solid var(--color-accent);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-white);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+
+  /* Enhanced background pattern */
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    radial-gradient(circle at 10% 20%, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 90%);
+
+  /* Mobile-first: prevent text selection for app-like feel */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  /* Prevent pull-to-refresh on mobile */
+  overscroll-behavior-y: contain;
+
+  /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  background: var(--color-bg);
+}
+
+/* Typography Classes */
+.display-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.h1 { font-size: 28px; line-height: 1.2; }
+.h2 { font-size: 20px; line-height: 1.3; }
+.h3 { font-size: 16px; line-height: 1.4; }
+.caption {
+  font-size: 12px;
+  color: var(--color-text-gray);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.utility {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Utility Classes */
+.text-accent { color: var(--color-accent); }
+.text-red { color: var(--color-red); }
+.border-left-accent {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 8px;
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--border-glass);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.5);
+}
+
+/* Hide scrollbar for horizontal scroll containers */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus States - Accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Allow text selection in inputs and text areas */
+input,
+textarea,
+.input-field,
+.preview-text {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+}
+
+/* Mobile-first responsive design */
+@media (min-width: 481px) {
+  /* Desktop view: show mobile frame centered */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+}

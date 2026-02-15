@@ -1,0 +1,55 @@
+.sport-tile {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  min-height: 120px;
+  justify-content: center;
+  border: 2px solid transparent;
+}
+
+.sport-tile:hover {
+  background: rgba(30, 30, 30, 0.8);
+  transform: translateY(-2px);
+}
+
+.sport-tile.selected {
+  border-color: var(--color-accent);
+  background: rgba(14, 165, 233, 0.1);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+}
+
+.sport-icon {
+  font-size: 40px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.sport-name {
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-text-white);
+}
+
+.sport-checkmark {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  width: 24px;
+  height: 24px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.sport-checkmark svg {
+  width: 16px;
+  height: 16px;
+}

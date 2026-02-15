@@ -1,0 +1,73 @@
+.login-screen {
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.skip-btn {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  color: var(--color-text-gray);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: color 0.2s;
+  min-height: 44px;
+}
+
+.skip-btn:hover {
+  color: var(--color-text-white);
+}
+
+.login-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login-title {
+  font-size: 32px;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text-gray);
+  line-height: 1.5;
+  min-height: 44px;
+  padding: var(--spacing-sm) 0;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkbox-text {
+  flex: 1;
+}

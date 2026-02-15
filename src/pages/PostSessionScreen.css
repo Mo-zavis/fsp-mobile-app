@@ -1,0 +1,124 @@
+.post-session-screen {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.session-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a1a2a 0%, #0a0a0a 100%);
+  z-index: 1;
+}
+
+.post-session-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.ad-slot {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.score-display {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.final-score {
+  font-size: 48px;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  margin-top: var(--spacing-md);
+  color: var(--color-accent);
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+}
+
+.post-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.share-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-white);
+  transition: background 0.2s;
+}
+
+.share-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.text-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.text-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-gray);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: var(--spacing-sm);
+}
+
+.text-btn:hover {
+  color: var(--color-text-white);
+}
+
+.post-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.back-link {
+  background: transparent;
+  border: none;
+  color: var(--color-text-gray);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+.back-link:hover {
+  color: var(--color-text-white);
+}

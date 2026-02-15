@@ -1,0 +1,135 @@
+.earn-header {
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.earn-icons {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.earn-cards {
+  padding: var(--spacing-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.earn-card {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.earn-card-icon {
+  font-size: 40px;
+}
+
+.earn-card-value {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.earn-card-label {
+  margin-bottom: -8px;
+}
+
+.action-grid {
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.action-card {
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.action-card:hover {
+  transform: translateY(-2px);
+}
+
+.action-icon {
+  font-size: 40px;
+}
+
+.earn-section {
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.deals-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--spacing-md);
+}
+
+.deal-card-horizontal {
+  min-width: 240px;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.deal-icon-large {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.travel-card {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+.travel-card:hover {
+  transform: translateY(-2px);
+}
+
+.travel-icon {
+  font-size: 32px;
+}
+
+.earn-footer {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+}
