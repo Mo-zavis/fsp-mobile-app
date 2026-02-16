@@ -1,10 +1,12 @@
 .login-screen {
   width: 100%;
-  min-height: 100vh;
-  padding: var(--spacing-lg);
+  height: 100vh;
+  max-height: 100vh;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
 .skip-btn {
@@ -16,9 +18,10 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: 8px 16px;
   transition: color 0.2s;
   min-height: 44px;
+  flex-shrink: 0;
 }
 
 .skip-btn:hover {
@@ -33,30 +36,32 @@
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
+  overflow-y: auto;
+  min-height: 0;
 }
 
 .login-title {
-  font-size: 32px;
-  margin-bottom: var(--spacing-lg);
+  font-size: 28px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 .checkbox-label {
   display: flex;
   align-items: flex-start;
-  gap: var(--spacing-sm);
+  gap: 8px;
   cursor: pointer;
   font-size: 14px;
   color: var(--color-text-gray);
   line-height: 1.5;
   min-height: 44px;
-  padding: var(--spacing-sm) 0;
+  padding: 8px 0;
 }
 
 .checkbox-input {

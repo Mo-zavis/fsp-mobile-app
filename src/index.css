@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@400;500;700;800&display=swap');
 
-:root {
-  /* Colors - EVOLVED THEME */
+:root,
+[data-theme="dark"] {
+  /* Colors - DARK THEME */
   --color-bg: #0a0a0a;
   --color-surface: #141414;
   --color-surface-glass: rgba(30, 30, 30, 0.6);
-  --color-accent: #0EA5E9;       /* Electric cyan-blue - PRIMARY ACCENT (evolved from yellow) */
-  --color-red: #EE3524;          /* Secondary accent */
+  --color-accent: #0EA5E9;
+  --color-red: #EE3524;
   --color-text-white: #FFFFFF;
   --color-text-gray: #A0A0A0;
+  --color-border: rgba(255, 255, 255, 0.1);
 
   /* Typography */
   --font-heading: 'Chakra Petch', sans-serif;
@@ -31,6 +33,23 @@
   --border-accent: 1px solid var(--color-accent);
 }
 
+[data-theme="light"] {
+  /* Colors - LIGHT THEME */
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-surface-glass: rgba(255, 255, 255, 0.8);
+  --color-accent: #0EA5E9;
+  --color-red: #EE3524;
+  --color-text-white: #0a0a0a;
+  --color-text-gray: #666666;
+  --color-border: rgba(0, 0, 0, 0.1);
+
+  /* Effects for light mode */
+  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.2);
+  --shadow-glow-strong: 0 0 30px rgba(14, 165, 233, 0.4);
+  --border-glass: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,24 +59,13 @@
 }
 
 body {
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
   color: var(--color-text-white);
   font-family: var(--font-body);
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-
-  /* Enhanced background pattern */
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.02) 0px,
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 1px,
-      transparent 10px
-    ),
-    radial-gradient(circle at 10% 20%, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 90%);
 
   /* Mobile-first: prevent text selection for app-like feel */
   -webkit-user-select: none;
@@ -69,15 +77,19 @@ body {
 
   /* Remove tap highlight on mobile */
   -webkit-tap-highlight-color: transparent;
+
+  transition: background-color 0.3s ease;
 }
 
 #root {
   min-height: 100vh;
+  max-height: 100vh;
   max-width: 480px;
   margin: 0 auto;
   position: relative;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   background: var(--color-bg);
+  overflow: hidden;
 }
 
 /* Typography Classes */

@@ -1,25 +1,27 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   max-width: 480px;
   margin: 0 auto;
   position: relative;
   background: var(--color-bg);
+  overflow: hidden;
 }
 
 .content-area {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
 }
 
 /* Highlights Row */
 .highlights-row {
   display: flex;
   overflow-x: auto;
-  padding: var(--spacing-sm) var(--spacing-md);
-  gap: var(--spacing-md);
+  padding: 8px 16px;
+  gap: 16px;
 }
 
 .story-item {
@@ -64,20 +66,20 @@
 
 /* Hero Section */
 .hero-section {
-  padding: var(--spacing-md);
+  padding: 16px;
   position: relative;
 }
 
 .hero-card {
   background: #222;
-  height: 380px;
-  border-radius: var(--radius-md);
+  height: 320px;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: var(--spacing-md);
+  padding: 16px;
   clip-path: polygon(0 0, 100% 0, 100% 95%, 90% 100%, 0 100%);
   cursor: pointer;
   transition: transform 0.2s;
@@ -121,8 +123,8 @@
 
 .live-tag {
   position: absolute;
-  top: var(--spacing-md);
-  left: var(--spacing-md);
+  top: 16px;
+  left: 16px;
   background: var(--color-red);
   color: white;
   padding: 4px 12px;
@@ -135,41 +137,41 @@
 }
 
 .hero-title {
-  font-size: 36px;
+  font-size: 32px;
   line-height: 0.95;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 8px;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .hero-meta {
   display: flex;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  gap: 16px;
+  margin-bottom: 16px;
   font-size: 13px;
   color: #ddd;
 }
 
 /* Wager Strip */
 .wager-strip {
-  margin: var(--spacing-md);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
+  margin: 16px;
+  border-radius: 8px;
+  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 .wager-left {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 8px;
   align-items: center;
   flex: 1;
 }
 
 .avatar-stack {
   display: flex;
-  margin-right: var(--spacing-xs);
+  margin-right: 4px;
 }
 
 .avatar {
@@ -193,7 +195,7 @@
   font-size: 12px;
   font-family: var(--font-heading);
   font-weight: 700;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s;
@@ -208,9 +210,9 @@
 .scroll-row {
   display: flex;
   overflow-x: auto;
-  padding: 0 var(--spacing-md);
-  gap: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
+  padding: 0 16px;
+  gap: 16px;
+  padding-bottom: 16px;
 }
 
 /* Deal Card */
@@ -220,8 +222,8 @@
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
+  padding: 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s;
   display: flex;
@@ -236,5 +238,5 @@
   height: 60px;
   background: #333;
   flex-shrink: 0;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
 }

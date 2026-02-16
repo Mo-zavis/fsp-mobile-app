@@ -1,11 +1,12 @@
 .splash-screen {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-lg);
+  padding: 24px;
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at 50% 30%, rgba(20, 20, 20, 1) 0%, rgba(0, 0, 0, 1) 100%);
@@ -44,11 +45,11 @@
 
 .splash-logo {
   font-family: var(--font-heading);
-  font-size: 72px;
+  font-size: 64px;
   font-weight: 900;
   letter-spacing: -2px;
   transform: skewX(-5deg);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 16px;
   text-shadow: 0 0 40px rgba(14, 165, 233, 0.3);
 }
 
@@ -63,7 +64,7 @@
 
 .splash-tagline {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -74,4 +75,5 @@
   width: 100%;
   max-width: 400px;
   z-index: 2;
+  flex-shrink: 0;
 }
