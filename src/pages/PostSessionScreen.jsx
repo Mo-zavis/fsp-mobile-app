@@ -40,7 +40,7 @@ export default function PostSessionScreen() {
 
           <div className="text-buttons">
             <button className="text-btn">Save</button>
-            <span style={{ color: '#666' }}>•</span>
+            <span className="caption">•</span>
             <button className="text-btn">Replay</button>
           </div>
         </div>

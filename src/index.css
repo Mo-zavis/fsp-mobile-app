@@ -2,31 +2,35 @@
 
 :root,
 [data-theme="dark"] {
-  /* Colors - DARK THEME */
   --color-bg: #0a0a0a;
   --color-surface: #141414;
   --color-surface-glass: rgba(30, 30, 30, 0.6);
+  --color-card: #1a1a1a;
+  --color-card-hover: #222222;
+  --color-elevated: #333333;
+  --color-muted: #444444;
   --color-accent: #0EA5E9;
   --color-red: #EE3524;
-  --color-text-white: #FFFFFF;
-  --color-text-gray: #A0A0A0;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+  --color-text-muted: #666666;
   --color-border: rgba(255, 255, 255, 0.1);
+  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-header-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+  --color-hero-gradient: radial-gradient(circle at center, #333, #000);
+  --color-slash-gradient: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1) 40%, rgba(14, 165, 233, 0.3) 100%);
 
-  /* Typography */
   --font-heading: 'Chakra Petch', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
 
-  /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
 
-  /* Effects */
   --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
   --shadow-glow-strong: 0 0 30px rgba(14, 165, 233, 0.5);
   --border-glass: 1px solid rgba(255, 255, 255, 0.1);
@@ -34,20 +38,27 @@
 }
 
 [data-theme="light"] {
-  /* Colors - LIGHT THEME */
-  --color-bg: #ffffff;
-  --color-surface: #f5f5f5;
-  --color-surface-glass: rgba(255, 255, 255, 0.8);
-  --color-accent: #0EA5E9;
-  --color-red: #EE3524;
-  --color-text-white: #0a0a0a;
-  --color-text-gray: #666666;
-  --color-border: rgba(0, 0, 0, 0.1);
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+  --color-card: #F0F0F0;
+  --color-card-hover: #E8E8E8;
+  --color-elevated: #E0E0E0;
+  --color-muted: #CCCCCC;
+  --color-accent: #0284C7;
+  --color-red: #DC2626;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-header-gradient: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), transparent);
+  --color-hero-gradient: radial-gradient(circle at center, #E0E0E0, #CCCCCC);
+  --color-slash-gradient: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.1) 40%, rgba(2, 132, 199, 0.2) 100%);
 
-  /* Effects for light mode */
-  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.2);
-  --shadow-glow-strong: 0 0 30px rgba(14, 165, 233, 0.4);
-  --border-glass: 1px solid rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.15);
+  --shadow-glow-strong: 0 0 30px rgba(2, 132, 199, 0.3);
+  --border-glass: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -68,85 +79,84 @@ html, body {
 
 body {
   background-color: var(--color-surface);
-  color: var(--color-text-white);
+  color: var(--color-text-primary);
   font-family: var(--font-body);
-
-  /* Mobile-first: prevent text selection for app-like feel */
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-
-  /* Prevent pull-to-refresh on mobile */
   overscroll-behavior-y: contain;
-
-  /* Remove tap highlight on mobile */
   -webkit-tap-highlight-color: transparent;
-
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #root {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
   position: relative;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   background: var(--color-bg);
   overflow: hidden;
 }
 
-/* Universal Screen Container */
+/* Universal Screen Container — EVERY page gets this */
 .app-container,
 .login-screen,
 .splash-screen,
 .sport-picker-screen,
 .play-screen,
 .post-session-screen,
-.challenge-screen,
-.pools-screen,
-.earn-screen {
-  height: 100vh;
+.challenge-screen {
+  height: 100%;
   width: 100%;
-  max-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: var(--color-bg);
 }
 
-/* Typography Classes */
+/* Scrollable content area inside screens with NavBar */
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  padding-bottom: 90px;
+}
+
+/* Typography */
 .display-text {
   font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1.3;
+  color: var(--color-text-primary);
 }
 
 .h1 { font-size: 28px; line-height: 1.2; }
 .h2 { font-size: 20px; line-height: 1.3; }
 .h3 { font-size: 16px; line-height: 1.4; }
+
 .caption {
   font-size: 12px;
-  color: var(--color-text-gray);
+  color: var(--color-text-secondary);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.5;
 }
+
 .utility {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 14px;
+  color: var(--color-text-primary);
 }
 
-/* Utility Classes */
 .text-accent { color: var(--color-accent); }
 .text-red { color: var(--color-red); }
-.border-left-accent {
-  border-left: 3px solid var(--color-accent);
-  padding-left: 8px;
-}
 
 /* Glass Panel */
 .glass-panel {
@@ -154,41 +164,17 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: var(--border-glass);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(14, 165, 233, 0.3);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(14, 165, 233, 0.5);
-}
-
-/* Hide scrollbar for horizontal scroll containers */
+/* Hide scrollbar */
 .hide-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+::-webkit-scrollbar { width: 0; height: 0; }
 
-/* Focus States - Accessibility */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
@@ -196,23 +182,8 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-/* Allow text selection in inputs and text areas */
-input,
-textarea,
-.input-field,
-.preview-text {
+input, textarea, .input-field, .preview-text {
   -webkit-user-select: text;
   -moz-user-select: text;
   user-select: text;
-}
-
-/* Mobile-first responsive design */
-@media (min-width: 481px) {
-  /* Desktop view: show mobile frame centered */
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
-  }
 }

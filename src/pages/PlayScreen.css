@@ -1,13 +1,4 @@
-.play-screen {
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: var(--color-bg);
-  overflow: hidden;
-}
-
+.play-screen { background: var(--color-bg); }
 .play-header {
   padding: 16px;
   display: flex;
@@ -15,52 +6,40 @@
   align-items: center;
   flex-shrink: 0;
 }
-
-.back-btn,
-.info-btn {
+.back-btn, .info-btn {
   background: transparent;
   border: none;
-  color: var(--color-text-white);
+  color: var(--color-text-primary);
   font-family: var(--font-heading);
   font-size: 16px;
   cursor: pointer;
   padding: 8px 16px;
   min-height: 44px;
-  min-width: 44px;
 }
-
-.play-score {
-  text-align: center;
-}
-
+.play-score { text-align: center; }
 .timer-bar {
   height: 40px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-card);
   position: relative;
   margin: 0 16px;
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
 }
-
 .timer-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--color-accent), #06B6D4);
   transition: width 1s linear;
 }
-
 .timer-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 18px;
-  color: var(--color-text-white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--color-text-primary);
 }
-
 .camera-area {
   flex: 1;
   display: flex;
@@ -70,73 +49,45 @@
   margin: 16px;
   min-height: 0;
 }
-
 .camera-placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #444;
+  color: var(--color-muted);
 }
-
 .sponsor-tag {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: 16px; right: 16px;
   padding: 4px 12px;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-overlay);
   border-radius: 4px;
+  color: #fff;
 }
-
-.sport-selector {
-  padding: 16px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.sport-circles {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
+.sport-selector { padding: 16px; text-align: center; flex-shrink: 0; }
+.sport-circles { display: flex; justify-content: center; gap: 16px; }
 .sport-circle {
-  width: 60px;
-  height: 60px;
+  width: 56px; height: 56px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-card);
   border: 2px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 26px;
   cursor: pointer;
   transition: all 0.2s;
 }
-
-.sport-circle:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .sport-circle.selected {
   border-color: var(--color-accent);
-  background: rgba(14, 165, 233, 0.1);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+  background: rgba(14, 165, 233, 0.15);
+  box-shadow: var(--shadow-glow);
 }
-
-.play-footer {
-  padding: 16px;
-  flex-shrink: 0;
-}
-
-/* Rules Overlay */
+.play-footer { padding: 16px; flex-shrink: 0; }
 .rules-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--color-overlay);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -144,21 +95,17 @@
   z-index: 1000;
   padding: 16px;
 }
-
 .rules-modal {
   max-width: 400px;
   width: 100%;
   padding: 24px;
   border-radius: 8px;
+  background: var(--color-surface);
 }
-
 .rules-list {
   list-style-position: inside;
-  color: var(--color-text-gray);
+  color: var(--color-text-secondary);
   line-height: 1.8;
   font-size: 14px;
 }
-
-.rules-list li {
-  margin-bottom: 8px;
-}
+.rules-list li { margin-bottom: 8px; }

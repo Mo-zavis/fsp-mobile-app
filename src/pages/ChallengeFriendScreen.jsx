@@ -49,7 +49,7 @@ export default function ChallengeFriendScreen() {
           <p className="preview-text">{challengeMessage}</p>
         </div>
 
-        <div className="caption" style={{ textAlign: 'center', color: '#666' }}>
+        <div className="caption" style={{ textAlign: 'center' }}>
           Funds held in secure escrow until resolved
         </div>
 

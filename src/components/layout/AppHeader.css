@@ -1,17 +1,13 @@
 .app-header {
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-sm);
+  padding: 16px 16px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+  background: var(--color-header-gradient);
   z-index: 10;
-  position: relative;
+  flex-shrink: 0;
 }
-
-.brand {
-  cursor: pointer;
-}
-
+.brand { cursor: pointer; }
 .logo {
   font-family: var(--font-heading);
   font-size: 24px;
@@ -20,47 +16,23 @@
   transform: skewX(-5deg);
   user-select: none;
 }
-
-.logo-text {
-  color: white;
-}
-
-.logo-dot {
-  color: var(--color-accent);
-}
-
-.header-icons {
-  display: flex;
-  gap: var(--spacing-sm);
-  align-items: center;
-}
-
+.logo-text { color: var(--color-text-primary); }
+.logo-dot { color: var(--color-accent); }
+.header-icons { display: flex; gap: 8px; align-items: center; }
 .header-icon-btn {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-surface-glass);
   border: var(--border-glass);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background 0.2s;
   padding: 0;
-  color: var(--color-text-white);
+  color: var(--color-text-primary);
 }
-
-.header-icon-btn svg {
-  width: 20px;
-  height: 20px;
-}
-
-.header-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.header-icon-btn:active {
-  transform: scale(0.95);
-}
+.header-icon-btn svg { width: 18px; height: 18px; }
+.header-icon-btn:hover { background: var(--color-card-hover); }

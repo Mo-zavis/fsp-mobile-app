@@ -1,31 +1,18 @@
 .section-header {
-  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
+  padding: 24px 16px 8px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-
 .section-title {
   font-size: 20px;
-  color: var(--color-text-white);
-  padding-left: var(--spacing-sm);
+  padding-left: 8px;
 }
-
-.section-title.accent-blue {
-  border-left: 4px solid var(--color-accent);
-}
-
-.section-title.accent-red {
-  border-left: 4px solid var(--color-red);
-}
-
+.section-title.accent-blue { border-left: 4px solid var(--color-accent); }
+.section-title.accent-red { border-left: 4px solid var(--color-red); }
 .see-all {
-  color: var(--color-text-gray);
+  color: var(--color-text-secondary);
   font-size: 12px;
   cursor: pointer;
-  transition: color 0.2s;
 }
-
-.see-all:hover {
-  color: var(--color-text-white);
-}
+.see-all:hover { color: var(--color-text-primary); }

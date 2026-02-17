@@ -1,44 +1,26 @@
-.input-field-wrapper {
-  width: 100%;
-  margin-bottom: var(--spacing-md);
-}
-
-.input-label {
-  display: block;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-text-gray);
-}
-
+.input-field-wrapper { width: 100%; }
+.input-label { display: block; margin-bottom: 4px; color: var(--color-text-secondary); }
 .input-container {
   display: flex;
   align-items: center;
   padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  background: rgba(30, 30, 30, 0.8);
+  border-radius: 4px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
   min-height: 48px;
 }
-
 .input-container:focus-within {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 1px var(--color-accent);
 }
-
-.input-icon {
-  margin-right: var(--spacing-sm);
-  color: var(--color-text-gray);
-  font-size: 18px;
-}
-
+.input-icon { margin-right: 8px; color: var(--color-text-secondary); font-size: 18px; }
 .input-field {
   flex: 1;
   background: transparent;
   border: none;
-  color: var(--color-text-white);
+  color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: 16px;
   outline: none;
 }
-
-.input-field::placeholder {
-  color: #666;
-}
+.input-field::placeholder { color: var(--color-text-muted); }
